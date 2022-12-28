@@ -1,4 +1,4 @@
-### Teste de desenvolvimento Ballroom 2022
+### Teste de desenvolvimento Ballroom 2022 PHP
 
 Fala dev, beleza? Para desenvolver, você precisa realizar um **clone** desse repositório para sua conta e no final, disponibilizar o link para visualização. 
 
@@ -77,10 +77,11 @@ Go to the moon! 🚀
     - Commits para cada must have solicitado
 
 ### Ficaremos felizes se você fizer 🙂
-- CRUD implementado com framework CodeIgniter
+- CRUD e API implementado com framework CodeIgniter ou Laravel :)
 - Documentação de todas as rotas (pode ser no readme do repositório)
 - Sistema de autenticação e autorização de um administrador e/ou vendedor
 
 ### Você poderá...
+- Escolher qualquer tipo de framework PHP, seja CodeIgniter, Laravel, CakePHP.
 - Escolher qualquer tipo de framework CSS, template ou afins para facilitar o desenvolvimento visual do CRUD (caso você opte por desenvolver isso)
 - Qualquer tipo de autenticação de usuário, como JWT, session e afins (caso opte por desenvolver a autenticação)
