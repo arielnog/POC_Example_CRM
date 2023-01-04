@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('v1/login', [AuthController::class, 'login']);
+Route::post('v1/users/store', [UserController::class, 'store']);
+
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function () {
+    Route::get('/logout', [AuthController::class,'logout']);
+
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', [UserController::class, 'list']);
+        Route::get('/{userId}', [UserController::class, 'getById']);
+        Route::put('/{userId}/update', [UserController::class, 'update']);
+        Route::delete('/{userId}/delete', [UserController::class, 'delete']);
+    });
+
+    Route::group(['prefix'=> 'contacts'], function (){
+        Route::get('/', [ContactController::class, 'list']);
+        Route::get('/{contactId}', [ContactController::class, 'getById']);
+        Route::post('/store', [ContactController::class, 'store']);
+        Route::put('/{contactId}/update', [ContactController::class, 'update']);
+        Route::put('/{contactId}/update/pipeline', [ContactController::class, 'updatePipeline']);
+        Route::delete('/{contactId}/delete', [ContactController::class, 'delete']);
+    });
 });
+
