@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `source` enum('facebook','whatsapp','google','website') COLLATE utf8mb4_unicode_ci NOT NULL,
   `stage` enum('lead','opportunity','customer') COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` enum('open','in_progress','dropped') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pipeline` enum('meeting_booked','contacted','negociation','proposal_sent','won','lost') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pipeline` enum('meeting_booked','contacted','negotiation','proposal_sent','won','lost') COLLATE utf8mb4_unicode_ci NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
