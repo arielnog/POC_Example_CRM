@@ -53,5 +53,3 @@ php artisan db:seed
 ## Execução da aplicação
 
 - Para executar os endpoints, é indicado seguir a documentação no link: [Documentação da API](https://documenter.getpostman.com/view/13762067/2s8Z72UBKr)
-
-## Obs. Não utilize o dump do diretorio database, use as migrations.
